@@ -13,6 +13,6 @@ res.status(200).send({
     message: "Server successfully set",
 }));
 
-// router.use(baseUrl,api);
+router.use(baseUrl, api);
 
 export default router;

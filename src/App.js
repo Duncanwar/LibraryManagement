@@ -29,12 +29,12 @@ connection.connect(function(error){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
 app.use(routes)
+app.set("views", "./src/views");
 app.set("view engine","ejs");
 
 app.get("/",function(req,res){
 res.render("Home");
 });
-
 
 app.get("/SignUp",function(req,res){
     res.render("SignUP");
