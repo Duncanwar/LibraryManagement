@@ -5,26 +5,7 @@ let bodyParser=require('body-parser');
 let msyql=require("mysql");
 let multer=require('multer');
 let upload=multer({dest:'public/uploads/'});
-
-
-let connection=msyql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:"Library"
-
-});
-
-
-connection.connect(function(error){
-    if (error) {
-        console.log(error);
-    }
-    else{
-        console.log("connected");
-    }
-}
-);
+import connection from './config/dbconnection'
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
@@ -35,10 +16,6 @@ app.set("view engine","ejs");
 app.get("/",function(req,res){
 res.render("Home");
 });
-
-app.get("/SignUp",function(req,res){
-    res.render("SignUP");
-})
 
 
 app.post("/home",function(req,res){

@@ -4,7 +4,7 @@ const router = express.Router();
 
 router
 .get('/client',(req,res)=>{
-    res.send("Get one client");
+    res.json(str)
 })
 .post('/client',(req,res)=>{
     res.send("Enter client");
