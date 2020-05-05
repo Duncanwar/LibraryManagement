@@ -17,7 +17,6 @@ app.get("/",function(req,res){
 res.render("Home");
 });
 
-
 app.post("/home",function(req,res){
    
      const data={

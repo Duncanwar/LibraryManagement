@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import api from './api/index.routes'
-
+import client from '../controllers/clientController'
 dotenv.config();
 const router = express.Router();
 const baseUrl = '/api/v1';

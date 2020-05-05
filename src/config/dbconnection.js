@@ -1,18 +1,22 @@
 import mysql from 'mysql'
-import express from 'express'
+import dotenv from 'dotenv'
 
-
-const connection = async () =>{
-try {
-    await mysql.createConnection({
+dotenv.config()
+const connection = 
+ mysql.createConnection({
         host: process.env.host,
         user: process.env.user,
         password: process.env.password,
-        database: process.env.Db_Name
-    });
-} catch(error){
-    console.log(error.message);
+        database: process.env.Db_Name,
+    
+} );
+
+connection.connect(error =>{
+if(error)
+console.log(error)
+else
+console.log('Connected successfully');
 }
-};
+)
 
 export default connection ;
