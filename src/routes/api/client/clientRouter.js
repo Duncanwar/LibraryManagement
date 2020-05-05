@@ -1,14 +1,10 @@
 import express from 'express'
-
+import client from '../../../controllers/clientController'
 const router = express.Router();
 
 router
-.get('/client',(req,res)=>{
-    res.json(str)
-})
-.post('/client',(req,res)=>{
-    res.send("Enter client");
-});
+.get('/client', client.findAll)
+.post('/client', client.create)
 router
 .get('/client/:id', (req,res)=>{
     res.send('Client ')
