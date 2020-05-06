@@ -2,8 +2,9 @@ import express from 'express'
 import Client from '../models/client.models';
 
 const router = express.Router();
+
 router.findAll=(req,res) => {
-client.getAll((err, data)=>{
+Client.getAll((err, data)=>{
     if(err)
     res.status(500).send({
         message: 
@@ -14,7 +15,7 @@ client.getAll((err, data)=>{
 })
 };
 
-router.create=(req,res)=>{
+router.make=(req,res)=>{
     // Validate request
     if(!req.body){
         res.status(400).send({
@@ -31,6 +32,7 @@ const client = new Client({
     clientCategory : req.body.clientCategory,
     photo : req.body.photo,
 });
+
 Client.create(client, (err, data)=>{
     if(err)
     res.status(500).send({
@@ -43,4 +45,4 @@ Client.create(client, (err, data)=>{
 };
 
 
-export default router
+export default router;

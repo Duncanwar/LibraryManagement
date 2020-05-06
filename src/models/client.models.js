@@ -30,9 +30,8 @@ Client.create = (newClient, result) => {
             result(null, err);
             return;
         }
-        else{
-            result(null, {id:res.insertId, ...newClient});
-        }
+        console.log("created customer: ", { id: res.insertId, ...newClient })
+        result(null, { id: res.regNo, ...newClient });
     });
 }
 
