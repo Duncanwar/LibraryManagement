@@ -4,7 +4,7 @@ const router = express.Router();
 
 router
 .get('/client', client.findAll)
-.post('/client', client.create)
+.post('/client', client.make)
 router
 .get('/client/:id', (req,res)=>{
     res.send('Client ')
